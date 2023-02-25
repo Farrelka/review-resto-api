@@ -78,4 +78,9 @@ class RestoController extends Controller
 
         return $resto;
     }
+
+    public function reviews(Resto $resto)
+    {
+        return $resto->reviews->load('user');
+    }
 }

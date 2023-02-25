@@ -3,8 +3,9 @@
 namespace Database\Seeders;
 
 use App\Models\Resto;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Review;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class RestoSeeder extends Seeder
 {
@@ -15,6 +16,6 @@ class RestoSeeder extends Seeder
      */
     public function run()
     {
-        Resto::factory()->count(100)->create();
+        Resto::factory()->has(Review::factory()->count(5))->count(100)->create();
     }
 }
